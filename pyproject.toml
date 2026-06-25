@@ -1,8 +1,29 @@
+[project]
+name = "great-hotels"
+version = "0.1.0"
+description = "Django-based hotel web application"
+requires-python = ">=3.13"
+dependencies = [
+    "django>=5.2,<6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "ruff",
+    "pytest",
+    "pytest-cov",
+    "pytest-django",
+    "factory-boy",
+]
+
 [tool.black]
 line-length = 88
+target-version = ["py313"]
 
 [tool.ruff]
 line-length = 88
 
 [tool.pytest.ini_options]
-addopts = "--cov"
+addopts = "--cov --reuse-db"
+DJANGO_SETTINGS_MODULE = "config.settings.local"

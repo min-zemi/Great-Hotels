@@ -1,21 +1,24 @@
 # Great Hotels
 
 ## Project Overview
-This project is a Python project managed with Git and uv.
+Django-based hotel web application for learning Django, Git, Python tooling, and AI coding agents.
 
 ## Environment
 - Python 3.13
 - uv virtual environment
 
 ## Tools
-- Black
-- Ruff
-- Pytest
-- Pytest-Cov
+- Django
+- Black (formatting)
+- Ruff (linting)
+- Pytest + pytest-django (testing)
+- Pytest-Cov (coverage)
 
 ## Setup
 
 ```bash
 uv venv
 source .venv/bin/activate
-uv pip install black ruff pytest pytest-cov
+uv sync
+python manage.py migrate
+python manage.py runserver
