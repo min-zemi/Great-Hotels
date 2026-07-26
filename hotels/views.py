@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-
+from django.shortcuts import render
 from .forms import HotelSearchForm
+
 def hotel_search(request):
     form = HotelSearchForm(request.GET or None)
 
@@ -15,10 +16,11 @@ def hotel_search(request):
     }
 
     return render(request, "hotels/search.html", context)
+
 def home(request):
     return HttpResponse("Hotel Booking Home")
 
-def hotel_list(request):
+def hotel_list(request)
     return HttpResponse("Matching Hotels")
 
 def register(request):
