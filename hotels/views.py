@@ -20,7 +20,7 @@ def hotel_search(request):
 def home(request):
     return HttpResponse("Hotel Booking Home")
 
-def hotel_list(request)
+def hotel_list(request):
     return HttpResponse("Matching Hotels")
 
 def register(request):
