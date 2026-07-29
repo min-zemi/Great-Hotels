@@ -1,39 +1,99 @@
 # Great Hotels
 
-## Project Overview
-Django-based hotel web application for learning Django, Git, Python tooling, and AI coding agents.
+## Overview
 
-## Environment
-- Python 3.13
-- uv virtual environment
+Great Hotels is a hotel booking web application developed with Django.
 
-## Tools
+Users can search for hotels by selecting a city, room type, and check-in date. Search results are updated dynamically using HTMX without reloading the page.
+
+This project was created for the Web Engineering course.
+
+---
+
+## Features
+
+- Home page
+- Hotel search
+- Search by city
+- Search by room type
+- Check-in date selection
+- Dynamic search results using HTMX
+- Hotel list page
+- Reservation page
+- Registration page (UI)
+- Booking success page
+- Responsive design
+
+---
+
+## Technologies
+
+- Python
 - Django
-- Black (formatting)
-- Ruff (linting)
-- Pytest + pytest-django (testing)
-- Pytest-Cov (coverage)
+- HTMX
+- HTML
+- CSS
+- Gunicorn
+- WhiteNoise
 
-## Setup
+---
 
-```bash
-uv venv
-source .venv/bin/activate
-uv sync
-python manage.py migrate
-python manage.py runserver
+## Project Structure
+
+```
+config/
+apps/
+hotels/
+templates/
+static/
+manage.py
 ```
 
-## Available URLs
+---
 
-| URL | View | Arguments | Return Value | Description |
-|------|------|-----------|--------------|-------------|
-| `/` | `home` | None | HttpResponse | Displays the hotel booking home page. |
-| `/hotels/` | `hotel_list` | None | HttpResponse | Displays a list of matching hotels. |
-| `/register/` | `register` | None | HttpResponse | Displays the user registration page. |
-| `/reserve/` | `reserve` | None | HttpResponse | Processes a reservation request (currently a placeholder). |
-| `/success/` | `success` | None | HttpResponse | Displays the reservation success page. |
+## How to Run
 
-## Notes
-The current implementation provides basic Django view functions connected to URLs.
-Database access and reservation logic will be implemented in later exercises.
+1. Clone the repository.
+
+```bash
+git clone <repository-url>
+cd Great-Hotels
+```
+
+2. Install dependencies.
+
+```bash
+uv sync
+```
+
+3. Run the development server.
+
+```bash
+uv run python manage.py runserver
+```
+
+Open:
+
+```
+http://127.0.0.1:8000/
+```
+
+---
+
+## Production Test
+
+Run Gunicorn:
+
+```bash
+DJANGO_SETTINGS_MODULE=config.settings.local \
+uv run gunicorn config.wsgi:application
+```
+
+---
+
+## Future Improvements
+
+- User authentication
+- Real database for hotels
+- Booking storage
+- Payment system
