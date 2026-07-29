@@ -1,3 +1,4 @@
+
 {% extends "hotels/base.html" %}
 
 {% block title %}Hotel Search{% endblock %}
@@ -6,7 +7,12 @@
 
 <h2>Search Hotels</h2>
 
-<form method="get">
+<form
+    hx-get="{% url 'hotel_search_results' %}"
+    hx-target="#search-results"
+    hx-swap="innerHTML"
+    hx-indicator="#loading-message"
+>
     {{ form.as_p }}
 
     <button type="submit">
@@ -14,16 +20,15 @@
     </button>
 </form>
 
-{% if search_data %}
+<p id="loading-message" class="htmx-indicator">
+    Searching...
+</p>
 
-<h3>Entered Information</h3>
-
-<p>City: {{ search_data.city }}</p>
-
-<p>Room Type: {{ search_data.room_type }}</p>
-
-<p>Date: {{ search_data.date }}</p>
-
-{% endif %}
+<section
+    id="search-results"
+    aria-live="polite"
+>
+    <p>Search results will appear here.</p>
+</section>
 
 {% endblock %}

@@ -107,3 +107,30 @@ select:focus {
         max-width: none;
     }
 }
+
+.hotel-list {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.hotel-card {
+    padding: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f8fafc;
+}
+
+.hotel-card h4 {
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.htmx-indicator {
+    display: none;
+}
+
+.htmx-request .htmx-indicator,
+.htmx-request.htmx-indicator {
+    display: block;
+}
