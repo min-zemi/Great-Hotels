@@ -29,7 +29,7 @@ def hotel_search_results(request):
         city = search_data["city"]
         room_type = search_data["room_type"]
 
-        # Exercise 10用の仮データ
+        # 仮データ
         hotel_data = [
             {
                 "name": "Aizu Grand Hotel",
