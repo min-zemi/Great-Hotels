@@ -20,6 +20,8 @@ This project was created for the Web Engineering course.
 - Dynamic search results using HTMX
 - Hotel list page
 - Reservation page
+
+(Not yet implemented)
 - Registration page (UI)
 - Booking success page
 - Responsive design
