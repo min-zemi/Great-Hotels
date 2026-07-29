@@ -73,7 +73,7 @@ def hotel_search_results(request):
 
 
 def hotel_list(request):
-    return render(request, "hotels/hotel_list.html")
+    return render(request, "hotels/list.html")
 
 
 def register(request):
