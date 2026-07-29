@@ -1,0 +1,43 @@
+{% if search_data %}
+
+    <h3>Search Results</h3>
+
+    <p>
+        City: {{ search_data.city }}
+    </p>
+
+    <p>
+        Room type: {{ search_data.room_type }}
+    </p>
+
+    <p>
+        Date: {{ search_data.date }}
+    </p>
+
+    {% if hotels %}
+        <div class="hotel-list">
+            {% for hotel in hotels %}
+                <article class="hotel-card">
+                    <h4>{{ hotel.name }}</h4>
+
+                    <p>
+                        City: {{ hotel.city }}
+                    </p>
+
+                    <p>
+                        Room type: {{ hotel.room_type }}
+                    </p>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>
+            No hotels matched your search conditions.
+        </p>
+    {% endif %}
+
+{% else %}
+    <p>
+        Please enter valid search conditions.
+    </p>
+{% endif %}

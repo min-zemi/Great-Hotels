@@ -1,0 +1,19 @@
+{% extends "hotels/base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h2>Welcome to Great Hotels</h2>
+
+<p>
+Find hotels, search available rooms, and make reservations easily.
+</p>
+
+<p>
+<a href="{% url 'hotel_search' %}">
+Search Hotels
+</a>
+</p>
+
+{% endblock %}
