@@ -75,3 +75,35 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+a:focus,
+button:focus,
+input:focus,
+select:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 2px;
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        padding: 12px;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        width: 95%;
+        margin: 15px auto;
+        padding: 16px;
+    }
+
+    input,
+    select,
+    button {
+        width: 100%;
+        max-width: none;
+    }
+}

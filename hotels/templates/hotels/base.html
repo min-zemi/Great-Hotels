@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,26 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Great Hotels{% endblock %}</title>
 
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
-    <header>
-        <h1>Great Hotels</h1>
 
-        <nav aria-label="Main navigation">
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'hotel_search' %}">Search Hotels</a>
-        </nav>
-    </header>
+<header>
+    <h1>Great Hotels</h1>
 
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'hotel_search' %}">Search Hotels</a>
+        <a href="{% url 'hotel_list' %}">Hotels</a>
+        <a href="{% url 'register' %}">Register</a>
+    </nav>
+</header>
 
-    <footer>
-        <p>&copy; 2026 Great Hotels</p>
-    </footer>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2026 Great Hotels</p>
+</footer>
+
 </body>
 </html>

@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Hotel Search</title>
-</head>
-<body>
-    <h1>Search Hotels</h1>
+{% extends "hotels/base.html" %}
 
-    <form method="get">
-        {{ form.as_p }}
-        <button type="submit">Search</button>
-    </form>
+{% block title %}Hotel Search{% endblock %}
 
-    {% if search_data %}
-        <h2>Entered information</h2>
+{% block content %}
 
-        <p>City: {{ search_data.city }}</p>
-        <p>Room type: {{ search_data.room_type }}</p>
-        <p>Check-in date: {{ search_data.date }}</p>
-    {% endif %}
-</body>
-</html>
+<h2>Search Hotels</h2>
+
+<form method="get">
+    {{ form.as_p }}
+
+    <button type="submit">
+        Search
+    </button>
+</form>
+
+{% if search_data %}
+
+<h3>Entered Information</h3>
+
+<p>City: {{ search_data.city }}</p>
+
+<p>Room Type: {{ search_data.room_type }}</p>
+
+<p>Date: {{ search_data.date }}</p>
+
+{% endif %}
+
+{% endblock %}

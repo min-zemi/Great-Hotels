@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import HotelSearchForm
 
+
 def hotel_search(request):
     form = HotelSearchForm(request.GET or None)
 
@@ -17,17 +18,22 @@ def hotel_search(request):
 
     return render(request, "hotels/search.html", context)
 
+
 def home(request):
-    return HttpResponse("Hotel Booking Home")
+    return render(request, "hotels/home.html")
+
 
 def hotel_list(request):
-    return HttpResponse("Matching Hotels")
+    return render(request, "hotels/list.html")
+
 
 def register(request):
-    return HttpResponse("User Registration")
+    return render(request, "hotels/register.html")
+
 
 def reserve(request):
-    return HttpResponse("Reservation Completed")
+    return render(request, "hotels/reserve.html")
+
 
 def success(request):
-    return HttpResponse("Booking Success")
+    return render(request, "hotels/success.html")
